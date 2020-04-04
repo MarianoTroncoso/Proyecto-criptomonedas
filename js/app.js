@@ -1,4 +1,7 @@
+const cotizador = new API('7b940c865fda42f45d74c18a4844e1e87f12856c1f66ac5d86ae1c25af68a41c');
 const ui = new Interfaz();
+
+cotizador.obtenerMonedasAPI();
 
 
 
