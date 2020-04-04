@@ -14,7 +14,7 @@ formulario.addEventListener('submit', (e) => {
     const monedaSeleccionada = monedaSelect.options[monedaSelect.selectedIndex].value;
     // console.log(monedaSeleccionada)
 
-    const criptoMonedaSelect = document.querySelector('#moneda');
+    const criptoMonedaSelect = document.querySelector('#criptomoneda');
     const criptoMonedaSeleccionada = criptoMonedaSelect.options[criptoMonedaSelect.selectedIndex].value;
     // console.log(criptoMonedaSeleccionada)
 
@@ -27,7 +27,9 @@ formulario.addEventListener('submit', (e) => {
         // todo bien, consultar la api
         cotizador.obtenerValores(monedaSeleccionada, criptoMonedaSeleccionada)
             .then(data => {
-                console.log(data)
+                // console.log(criptoMonedaSeleccionada)
+                // console.log(data.resultado.RAW)
+                ui.mostrarResultado(data.resultado.RAW, monedaSeleccionada, criptoMonedaSeleccionada)
             })
     }
 });

@@ -45,4 +45,9 @@ class Interfaz{
         }, 3000);
 
     }
+
+    // imprimir el restulado de la cotizacion
+    mostrarResultado(resultado, moneda, crypto){
+        console.log(resultado[crypto][moneda]);
+    }
 }
