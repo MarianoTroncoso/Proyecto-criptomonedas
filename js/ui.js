@@ -48,6 +48,27 @@ class Interfaz{
 
     // imprimir el restulado de la cotizacion
     mostrarResultado(resultado, moneda, crypto){
-        console.log(resultado[crypto][moneda]);
+        // console.log(resultado[crypto][moneda]);
+
+        const datosMoneda = resultado[crypto][moneda];
+
+        console.log(datosMoneda);
+
+        // recordar digitos de precio
+        let precio = datosMoneda.PRICE.toFixed(2);
+
+        // construir template 
+        let templateHTML = `
+            <div class="card bg-warning">
+                <div class="card-body text-light">
+                    <h2 class="card-title">Resultado: </h2>
+                    <p>El precio de: ${datosMoneda.FROMSYMBOL} a moneda 
+                    ${datosMoneda.TOSYMBOL} es de $ ${precio}</p>
+                </div>
+            </div>
+        `;
+
+        // insertar 
+        document.querySelector('#resultado').innerHTML = templateHTML;
     }
 }
