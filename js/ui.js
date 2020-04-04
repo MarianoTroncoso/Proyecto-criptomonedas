@@ -55,7 +55,10 @@ class Interfaz{
         console.log(datosMoneda);
 
         // recordar digitos de precio
-        let precio = datosMoneda.PRICE.toFixed(2);
+        let precio = datosMoneda.PRICE.toFixed(2),
+            porcentaje = datosMoneda.CHANGEPCTDAY.toFixed(2), 
+            actualizado = new Date(datosMoneda.LASTUPDATE * 1000).toLocaleDateString('es-MX');;
+
 
         // construir template 
         let templateHTML = `
@@ -64,6 +67,8 @@ class Interfaz{
                     <h2 class="card-title">Resultado: </h2>
                     <p>El precio de: ${datosMoneda.FROMSYMBOL} a moneda 
                     ${datosMoneda.TOSYMBOL} es de $ ${precio}</p>
+                    <p>Variacion ultimo dia: %${porcentaje}</p>
+                    <p>Ultima actualizacion: ${actualizado}</p>
                 </div>
             </div>
         `;
