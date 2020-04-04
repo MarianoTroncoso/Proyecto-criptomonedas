@@ -13,7 +13,12 @@ class Interfaz{
     constructorSelect(){
         cotizador.obtenerMonedasAPI()
             .then(monedas => {
-                console.log(monedas);
+                // console.log(monedas.monedas.Data);
+                // lo anterior NO es un arreglo, pero podemos 
+                // recorerlo de la siguiente manera
+                for( const [key, value] of Object.entries(monedas.monedas.Data) ){
+                    console.log(value)
+                }
             })
     }
 

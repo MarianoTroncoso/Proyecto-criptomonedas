@@ -11,7 +11,7 @@ class API{
 
         // respuesta en JSON
         const monedas = await urlObtenerMonedas.json();
-        console.log(monedas);
+        // console.log(monedas);
         return {
             monedas
         }
